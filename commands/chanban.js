@@ -35,7 +35,10 @@ class Command {
 		if (!channel)
 			return message.reply("le nom du channel n'est pas reconnu.");
 		
-		channel.overwritePermissions(member.id,{'CONNECT':false});
+		if (channel.type == "voice")
+			channel.overwritePermissions(member.id, {'CONNECT':false});
+		else
+			channel.overwritePermissions(member.id, {'SEND_MESSAGES':false});
 		message.reply("j'ai bloqué l'accès vers " + channel.name + " à " + member.displayName + " pour " + delay + " minutes.");
 		member.setVoiceChannel(utils.talosLab.channels.get("438425196949667840"));
 		

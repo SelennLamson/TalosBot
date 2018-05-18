@@ -2,6 +2,7 @@ var classes = [];
 
 // List all command files here
 classes.push(require('./chanban.js'));
+classes.push(require('./count.js'));
 classes.push(require('./debat.js'));
 classes.push(require('./help.js'));
 classes.push(require('./ping.js'));
